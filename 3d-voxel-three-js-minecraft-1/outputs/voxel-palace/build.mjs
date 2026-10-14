@@ -1,0 +1,13 @@
+import { build } from 'esbuild';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+const root = path.dirname(fileURLToPath(import.meta.url));
+const result = await build({entryPoints:[path.join(root,'src/main.js')],bundle:true,minify:true,format:'iife',target:'es2020',write:false,legalComments:'inline'});
+const [shell, css] = await Promise.all(['shell.html','style.css'].map(f=>readFile(path.join(root,'src',f),'utf8')));
+const js = result.outputFiles[0].text.replace(/<\/script/gi,'<\\/script');
+const html = shell.replace('<!--STYLE-->',`<style>${css}</style>`).replace('<!--SCRIPT-->',`<script>${js}</script>`);
+await mkdir(path.join(root,'dist'),{recursive:true});
+await writeFile(path.join(root,'dist/index.html'),html);
+await writeFile(path.join(root,'../青阙·体素古建.html'),html);
+console.log(`Offline HTML built: ${(Buffer.byteLength(html)/1024).toFixed(0)} KB`);

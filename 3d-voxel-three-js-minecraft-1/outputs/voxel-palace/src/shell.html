@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeece3">
+  <title>青阙 · 一座方寸之间的东方庭院</title>
+  <!--STYLE-->
+</head>
+<body>
+  <main id="scene" aria-label="可旋转缩放的三维中国古典建筑群"></main>
+  <header class="identity">
+    <div class="eyebrow"><i></i> VOXEL HERITAGE <span>001</span></div>
+    <h1>青阙<span class="seal">方寸</span></h1>
+    <p>一砖一瓦，山河入梦。</p>
+    <div class="subline">中国古建 · 体素造境</div>
+  </header>
+  <div class="top-right"><span class="live-dot"></span><span id="light-label">晨光 · 07:30</span><span class="divider"></span><span>自由观景</span></div>
+  <div class="compass" aria-hidden="true"><span>北</span><div id="compass-needle">↑</div><small>N</small></div>
+  <aside class="scene-note"><span class="note-number">01 /</span><div><strong>中轴有序 · 六境成院</strong><p>山门入境，双塔相望，主殿居中。</p></div></aside>
+  <nav class="toolbar" aria-label="场景控制">
+    <button id="rotate" type="button" aria-pressed="false" title="自动环绕"><span class="icon">↻</span><span>环绕</span></button>
+    <span class="tool-divider"></span>
+    <button id="light" type="button" aria-pressed="false" title="切换晨光与暮色"><span class="icon" id="sun-icon">☀</span><span id="light-button-label">暮色</span></button>
+    <span class="tool-divider"></span>
+    <button id="reset" type="button" title="恢复全貌"><span class="icon">⌂</span><span>归位</span></button>
+    <span class="tool-divider"></span>
+    <button id="info" type="button" aria-expanded="false" aria-controls="info-panel" title="建筑说明"><span class="icon">i</span><span>览胜</span></button>
+  </nav>
+  <div class="gesture">拖动旋转 <span>·</span> 滚轮缩放 <span>·</span> 右键平移</div>
+  <div class="edition">建于方寸，见天地。<span>THREE.JS / VOXEL STUDY</span></div>
+  <section id="info-panel" class="info-panel" hidden>
+    <div class="panel-heading"><span>庭院览胜</span><button id="close-info" aria-label="关闭说明">×</button></div>
+    <p>以中轴为序，以方块为材。六座建筑与两重庭院，构成一座可游可观的东方微缩世界。</p>
+    <dl><dt>01　承天殿</dt><dd>重檐金瓦，朱柱斗拱，居中为尊。</dd><dt>02　东西配殿</dt><dd>青瓦歇山，两翼相依。</dd><dt>03　景和门</dt><dd>石狮守门，红灯迎客。</dd><dt>04　双宝塔</dt><dd>五层攒尖，层檐向天。</dd></dl>
+    <footer>触屏：单指旋转 · 双指缩放 / 平移<br>快捷键：R 归位 · 空格 环绕 · L 晨昏</footer>
+  </section>
+  <div id="status" role="status">正在营造庭院…</div>
+  <noscript><div class="fatal">请启用 JavaScript 以观看三维场景。</div></noscript>
+  <!--SCRIPT-->
+</body>
+</html>
